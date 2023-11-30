@@ -78,4 +78,42 @@ public class PersonajeController {
         }
     }
 
+    //*******************************************Funciones de informes
+
+    @GetMapping("/numPersonajes")
+    public ResponseEntity<Integer> getNumeroPersonajes() {
+        try {
+            int numeroPersonajes = personajeService.obtenerNumeroPersonajes();
+            return new ResponseEntity<>(numeroPersonajes, HttpStatus.OK);
+        } catch (Exception e) {
+            // Manejar errores y devolver un código de estado apropiado
+            System.err.println("Error al obtener el número de personajes: " + e.getMessage());
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/nivelMedio")
+    public ResponseEntity<Integer> getNivelMedio() {
+        try {
+            int nivelMedio = personajeService.obtenerNivelMedio();
+            return new ResponseEntity<>(nivelMedio, HttpStatus.OK);
+        } catch (Exception e) {
+            // Manejar errores y devolver un código de estado apropiado
+            System.err.println("Error al obtener el nivel medio: " + e.getMessage());
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/masvida")
+    public ResponseEntity<String> obtenerNombrePersonajeConMasVida() {
+        String nombrePersonajeMasVida = personajeService.pedirPersonajeMasVida();
+        System.out.println("El personaje con más vida es: " + nombrePersonajeMasVida);
+
+        if (nombrePersonajeMasVida != null) {
+            return new ResponseEntity<>(nombrePersonajeMasVida, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 }

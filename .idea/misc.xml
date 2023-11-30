@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/batallas/pom.xml" />
         <option value="$PROJECT_DIR$/personajes/pom.xml" />
+        <option value="$PROJECT_DIR$/estadisticas/pom.xml" />
       </list>
     </option>
   </component>

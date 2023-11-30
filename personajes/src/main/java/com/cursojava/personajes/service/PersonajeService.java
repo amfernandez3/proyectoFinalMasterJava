@@ -20,4 +20,8 @@ public interface PersonajeService {
     //Eliminar un personaje de la base de datos por id
     void eliminarPersonaje(int id);
 
+    int obtenerNumeroPersonajes();
+    int obtenerNivelMedio();
+
+    String pedirPersonajeMasVida();
 }

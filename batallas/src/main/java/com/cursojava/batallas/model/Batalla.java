@@ -2,9 +2,12 @@ package com.cursojava.batallas.model;
 
 import com.cursojava.batallas.DTO.PersonajeDTO;
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.util.Random;
 
 @Entity
+@Data
 @Table(name = "Batallas")
 public class Batalla {
     @Id
@@ -52,42 +55,6 @@ public class Batalla {
         int randomNumber = random.nextInt(numeroMaximo) + numeroMinimo;
 
         return randomNumber;
-    }
-
-    public int getIdBatalla() {
-        return idBatalla;
-    }
-
-    public String getUbicacionBatalla() {
-        return ubicacionBatalla;
-    }
-
-    public void setUbicacionBatalla(String ubicacionBatalla) {
-        this.ubicacionBatalla = ubicacionBatalla;
-    }
-
-    public int getPersonajeId1() {
-        return personajeId1;
-    }
-
-    public void setPersonajeId1(int personajeId1) {
-        this.personajeId1 = personajeId1;
-    }
-
-    public int getPersonajeId2() {
-        return personajeId2;
-    }
-
-    public void setPersonajeId2(int personajeId2) {
-        this.personajeId2 = personajeId2;
-    }
-
-    public boolean isVictoriaPj1() {
-        return victoriaPj1;
-    }
-
-    public void setVictoriaPj1(boolean victoriaPj1) {
-        this.victoriaPj1 = victoriaPj1;
     }
 
     //Métodos de batalla

@@ -1,10 +1,12 @@
 package com.cursojava.personajes.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.Random;
 
 @Entity
+@Data
 @Table(name = "Personajes")
 public class Personaje {
     //Atributos de identificacion de la clase
@@ -47,73 +49,6 @@ public class Personaje {
         personaje.setExperienciaActual(0);
         personaje.setExperienciaSiguienteNivel(100);
     }
-
-    //*********************************************************** Getters & Setters
-    public String getNombrePersonaje() {
-        return nombrePersonaje;
-    }
-
-    public void setNombrePersonaje(String nombrePersonaje) {
-        this.nombrePersonaje = nombrePersonaje;
-    }
-
-    public boolean isAlineacionAliado() {
-        return alineacionAliado;
-    }
-
-    public void setAlineacionAliado(boolean alineacionAliado) {
-        this.alineacionAliado = alineacionAliado;
-    }
-
-    public int getAtaquePersonaje() {
-        return ataquePersonaje;
-    }
-
-    public void setAtaquePersonaje(int ataquePersonaje) {
-        this.ataquePersonaje = ataquePersonaje;
-    }
-
-    public int getDefensaPersonaje() {
-        return defensaPersonaje;
-    }
-
-    public void setDefensaPersonaje(int defensaPersonaje) {
-        this.defensaPersonaje = defensaPersonaje;
-    }
-
-    public int getVitalidadPersonaje() {
-        return vitalidadPersonaje;
-    }
-
-    public void setVitalidadPersonaje(int vitalidadPersonaje) {
-        this.vitalidadPersonaje = vitalidadPersonaje;
-    }
-
-    public int getExperienciaActual() {
-        return experienciaActual;
-    }
-
-    public void setExperienciaActual(int experienciaActual) {
-        this.experienciaActual = experienciaActual;
-    }
-
-    public int getExperienciaSiguienteNivel() {
-        return experienciaSiguienteNivel;
-    }
-
-    public void setExperienciaSiguienteNivel(int experienciaSiguienteNivel) {
-        this.experienciaSiguienteNivel = experienciaSiguienteNivel;
-    }
-
-    public int getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(int nivel) {
-        this.nivel = nivel;
-    }
-
-
     //*********************************************** Otras funciones
 
     public static int asignarValorAleatorio(int numeroMinimo, int numeroMaximo) {

@@ -1,4 +1,5 @@
-package com.cursojava.batallas.DTO;
+package com.cursojava.estadisticas.DTO;
+
 
 import lombok.Data;
 
