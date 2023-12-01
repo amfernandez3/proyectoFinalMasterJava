@@ -42,10 +42,34 @@ public class InformePersonajesServiceImp implements InformePersonajesService {
     }
 
     @Override
-    public String pedirmasvida() {
+    public String pedirMasVida() {
         try {
-            // Hacer una solicitud al microservicio de personajes para obtener el nivel medio
+            // Hacer una solicitud al microservicio de personajes para obtener la vida más alta
             String url = personajesUrl + "/personajes/masVida";
+            return restTemplate.getForObject(url, String.class);
+        } catch (Exception e) {
+            System.err.println("Error al obtener el personaje: " + e.getMessage());
+            throw new RuntimeException("Error al obtener el personaje", e);
+        }
+    }
+
+    @Override
+    public String pedirMasAtaque() {
+        try {
+            // Hacer una solicitud al microservicio de personajes para obtener el ataque más alto
+            String url = personajesUrl + "/personajes/masAtaque";
+            return restTemplate.getForObject(url, String.class);
+        } catch (Exception e) {
+            System.err.println("Error al obtener el personaje: " + e.getMessage());
+            throw new RuntimeException("Error al obtener el personaje", e);
+        }
+    }
+
+    @Override
+    public String pedirMasDefensa() {
+        try {
+            // Hacer una solicitud al microservicio de personajes para obtener la defensa más alta
+            String url = personajesUrl + "/personajes/masDefensa";
             return restTemplate.getForObject(url, String.class);
         } catch (Exception e) {
             System.err.println("Error al obtener el personaje: " + e.getMessage());

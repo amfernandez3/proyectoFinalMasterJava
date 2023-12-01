@@ -24,4 +24,6 @@ public interface PersonajeService {
     int obtenerNivelMedio();
 
     String pedirPersonajeMasVida();
+    String pedirPersonajeMasAtaque();
+    String pedirPersonajeMasDefensa();
 }

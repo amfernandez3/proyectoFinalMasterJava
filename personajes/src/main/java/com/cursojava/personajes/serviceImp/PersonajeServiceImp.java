@@ -75,4 +75,34 @@ public class PersonajeServiceImp implements PersonajeService {
 
         return personajeMasVida.getNombrePersonaje();
     }
+
+    @Override
+    public String pedirPersonajeMasAtaque() {
+        // Lógica para obtener el nombre del personaje con más vida
+        List<Personaje> personajes = personajeDAO.findAll();
+
+        if (personajes.isEmpty()) {
+            return null;  // No hay personajes en la base de datos
+        }
+
+        // Encontrar el personaje con más vida
+        Personaje personajeMasAtaque = Collections.max(personajes, Comparator.comparingInt(Personaje::getAtaquePersonaje));
+
+        return personajeMasAtaque.getNombrePersonaje();
+    }
+
+    @Override
+    public String pedirPersonajeMasDefensa() {
+        // Lógica para obtener el nombre del personaje con más vida
+        List<Personaje> personajes = personajeDAO.findAll();
+
+        if (personajes.isEmpty()) {
+            return null;  // No hay personajes en la base de datos
+        }
+
+        // Encontrar el personaje con más vida
+        Personaje personajeMasDefensa = Collections.max(personajes, Comparator.comparingInt(Personaje::getDefensaPersonaje));
+
+        return personajeMasDefensa.getNombrePersonaje();
+    }
 }

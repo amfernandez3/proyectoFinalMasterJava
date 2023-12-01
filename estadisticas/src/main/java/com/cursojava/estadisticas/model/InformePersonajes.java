@@ -15,6 +15,8 @@ public class InformePersonajes {
     private int idInforme;
     private int numeroPersonajes;
     private int nivelMedioPersonajes;
-    private String PersonajeMasVida;
+    private String personajeMasVida;
+    private String personajeMasAtaque;
+    private String personajeMasDefensa;
 
 }

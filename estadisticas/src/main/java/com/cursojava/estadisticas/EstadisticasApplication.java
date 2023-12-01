@@ -12,9 +12,10 @@ public class EstadisticasApplication {
 		SpringApplication.run(EstadisticasApplication.class, args);
 	}
 
-	//config de RestTemplate
+	// Configuración de RestTemplate
 	@Bean
-	public RestTemplate template(){
+	public RestTemplate template() {
 		return new RestTemplate();
 	}
+
 }
